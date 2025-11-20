@@ -1,0 +1,12 @@
+/* Reference Section */
+.ref-person {
+  margin-left: 1em;
+  margin-bottom: 2em;
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ref-position {
+  font-style: italic;
+}
