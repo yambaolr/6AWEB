@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: brown;
+}
+
+nav {
+  background-color: rgb(236, 213, 184);
+  padding: 2em;
+  margin: 0;
+  border-bottom: 1px solid brown;
+  text-align: right;
+}
+
+
+nav a {
+  color:rgba(165, 42, 42, 0.753);
+  padding: 2em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+nav a:hover{
+  color: brown;
+}

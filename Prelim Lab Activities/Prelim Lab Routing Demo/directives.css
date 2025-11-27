@@ -1,0 +1,19 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2, th {
+  color: brown;
+}
+
+button {
+  padding: 1em;
+  margin-bottom: 10px;
+}
+table {
+  padding: 1em 0.5em 0.1em 1em;
+}
+
+table td {
+  padding: 0.5em
+}
