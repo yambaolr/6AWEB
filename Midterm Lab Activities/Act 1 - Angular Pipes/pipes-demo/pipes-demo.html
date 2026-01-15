@@ -1,0 +1,58 @@
+<div>
+  <h1>Angular Pipes</h1>
+  <hr/>
+  <!--Date Pipes-->
+  <div>
+    <!-- Name: Lorin Robelle M. Yambao-->
+    <h3> Date Pipes</h3>
+      This is a short date: - {{ presentDate | date:'shortDate'}} <br/>
+      This line shows the full date: - {{ presentDate | date:'fullDate' | uppercase}} <br/>
+      This will show a formatted date: - {{ presentDate | date:'M/dd/yyyy'}} <br/>
+      This indicates the hours and minutes: - {{ presentDate | date:'h:mm'}} <br/>
+  </div>
+
+  <!-- Async Pipe -->
+  <div>
+    <h3> Async Pipe</h3>
+    Time moving with seconds: {{ time$ | async | date:'mediumTime' }}
+  </div>
+
+  <!-- Currency Pipe -->
+   <div>
+      <h3> Currency Pipe </h3>
+      <p> {{ price | currency: '':true}}</p>
+      <p>{{ price | currency:'INR'}}</p>
+   </div>
+
+   <!--Decimal Pipe-->
+   <div>
+      <h3>Decimal Pipe</h3>
+      <p>{{ decimalNum1 | number }}</p>
+      <p>{{ decimalNum2 | number }}</p>
+   </div>
+
+   <!--  Slice Pipe -->
+    <div>
+      <h3>Slice Pipe</h3>
+      <p>{{ str }} sliced using [0:2]: {{ str | slice: 0: 2}}</p>
+    </div>
+
+  <!-- Additional Pipes -->
+  <!-- Percent Pipes -->
+  <div>
+    <h3>Percent Pipes</h3>
+    <p>A: {{ a | percent }}</p>
+  </div>
+
+  <!-- Titlecase Pipes -->
+  <div>
+    <h3>TitleCase Pipes</h3>
+    <p>{{ title }} converted to TitleCase: {{ title | titlecase }}</p>
+  </div>
+
+  <!--JSON Pipes-->
+  <div>
+    <h3>JSON Pipes</h3>
+    <p>{{ user | json }}</p>
+  </div>
+</div>
