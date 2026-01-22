@@ -1,0 +1,33 @@
+<div>
+  <h2> List from Main</h2>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Phone Number</th>
+    </tr>
+    @for (user of httpusers; track user.id){
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username}}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.website }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    }
+  </table>
+</div>
+
+<div>
+  <h2>Comments</h2>
+  <ul>
+    @for(comments of httpcomments | slice:0:5; track comments.id){
+      <li>{{comments.id}}. {{comments.body}}</li>
+    }
+  </ul>
+</div>
+<router-outlet />
