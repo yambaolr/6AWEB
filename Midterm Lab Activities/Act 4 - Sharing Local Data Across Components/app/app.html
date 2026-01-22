@@ -1,0 +1,44 @@
+<h1>ANGULAR SERVICES & DEPENDENCY INJECTION</h1>
+<hr />
+
+<div>
+  <h2> EMPLOYEES LIST</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+      <th>EMAIL</th>
+    </tr>
+    @for (employee of employees; track employee.id){
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstname }}</td>
+        <td>{{ employee.lastname }}</td>
+        <td>{{ employee.email }}</td>
+      </tr>
+    }
+  </table>
+</div>
+<hr />
+<div>
+  <h2> PRODUCTS LIST</h2>
+  <table>
+    <tr>
+      <th>PRODUCT ID</th>
+      <th>PRODUCT NAME</th>
+      <th>DESCRIPTION</th>
+      <th>PRICE</th>
+    </tr>
+    @for (product of products; track product.id){
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+    }
+  </table>
+</div>
+<hr/>
+<router-outlet />
