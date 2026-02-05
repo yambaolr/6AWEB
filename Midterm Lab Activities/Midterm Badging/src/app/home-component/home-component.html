@@ -1,0 +1,18 @@
+<h1> Home </h1>
+<h2>Welcome!</h2>
+
+<p> This portal pulls remote records and shares them across pages.</p>
+
+<h2> Latest Updates </h2>
+<ul>
+  @for (post of httpposts | slice:0:5; track post.id){
+    <li> {{post.title | uppercase }}
+      <ul>
+        <li>
+          {{post.body}}
+        </li>
+      </ul>
+    </li>
+  }
+</ul>
+

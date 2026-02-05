@@ -1,0 +1,17 @@
+<h1>Services</h1>
+
+<input [(ngModel)]="search" (input)="filterPosts()">
+
+<h2>Posts</h2>
+<hr/>
+<ul>
+  @for (post of filter; track post.id){
+    <li> {{post.title | uppercase }}
+      <ul>
+        <li>
+          {{post.body}}
+        </li>
+      </ul>
+    </li>
+  }
+</ul>

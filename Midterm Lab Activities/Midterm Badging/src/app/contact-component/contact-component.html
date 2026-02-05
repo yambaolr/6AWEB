@@ -1,0 +1,38 @@
+<h1>Form Preview</h1>
+
+<form>
+  <div>
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+    />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      name="email"
+      [(ngModel)]="email"
+    />
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <input
+      id="message"
+      name="message"
+      [(ngModel)]="message"
+    />
+  </div>
+
+  <br />
+      <h2>Preview: </h2>
+      <p>Name: {{ name | uppercase }}</p>
+      <p>Preview: {{ email }}</p>
+      <p>Preview: {{ message }}</p>
+
+  <button>Submit</button>
+</form>
