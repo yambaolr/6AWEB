@@ -1,0 +1,80 @@
+<h1>Template Demo Form</h1>
+<hr/>
+
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <input
+    class="input-box"
+    type="text"
+    name="username"
+    [(ngModel)]="username"
+    placeholder="Enter username"
+    required>
+
+  <input
+    class="input-box"
+    type="password"
+    name="password"
+    [(ngModel)]="password"
+    placeholder="Enter password"
+    required
+    minlength="6">
+
+  <select
+    class="input-box"
+    name="role"
+    [(ngModel)]="role"
+    placeholder="Enter username"
+    required>
+      <option value="" disabled selected class="placeholder">Select role</option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+      <option value="guest">Guest</option>
+  </select>
+
+  <div class="form-group">
+  <label>Select Gender:</label>
+
+  @for (type of genderOptions; track type) {
+    <div>
+      <label>
+        <input
+          type="radio"
+          name="gender"
+          [value]="type"
+          [(ngModel)]="selectedGender"
+          required
+        />
+        {{ type }}
+      </label>
+    </div>
+  }
+</div>
+
+
+  <select
+    class="input-box"
+    name="status"
+    [(ngModel)]="status"
+    placeholder="Enter status"
+    required>
+      <option value="" disabled selected class="placeholder">Select status</option>
+      <option value="admin">Permanent</option>
+      <option value="user">Probationary</option>
+  </select>
+
+  <textarea
+      id="notes"
+      name="notes"
+      rows="4"
+      [(ngModel)]="notes"
+      required
+      minlength="10"
+    ></textarea>
+
+
+  <input
+      class="btn"
+      type="submit"
+      value="Submit"
+      [disabled]="!myForm.valid">
+</form>

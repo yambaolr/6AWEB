@@ -1,0 +1,57 @@
+<h1>Job Application Form</h1>
+<hr/>
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="input" placeholder="Enter First Name" formControlName="fname" />
+    @if (isInvalid('fname')) {
+      <small class="error">First Name: 2-50 chars (letters only)</small>
+    }
+
+    <input class="input" placeholder="Enter Last Name" formControlName="lname" />
+    @if (isInvalid('lname')) {
+      <small class="error">Last Name: 2-50 chars (letters only)</small>
+    }
+
+    <input class="input" placeholder="Enter Middle Initial" formControlName="minit" />
+    @if (isInvalid('minit')) {
+      <small class="error">Middle Initial: 2-3 chars (letters only)</small>
+    }
+
+    <div class="form-group">
+      <label>Gender:</label>
+      <div>
+        <label>
+          <input type="radio" formControlName="gender" name="gender" value="female" />
+          Female
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" name="gender" value="male" />
+          Male
+        </label>
+      </div>
+    </div>
+
+    <input class="input" placeholder="Enter Email" formControlName="email" />
+    @if (isInvalid('email')) {
+      <small class="error">Enter a valid email.</small>
+    }
+
+    <input class="input" placeholder="Enter Phone Number" formControlName="phone" />
+    @if (isInvalid('phone')) {
+      <small class="error">Phone number: 11 digits</small>
+    }
+
+    <select class="input" formControlName="role">
+      @for (r of role; track r){
+        <option [value]="r">{{ r }}</option>
+      }
+    </select>
+
+    <select class="input" formControlName="mode">
+      @for (m of mode; track m){
+        <option [value]="m">{{ m }}</option>
+      }
+    </select>
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
