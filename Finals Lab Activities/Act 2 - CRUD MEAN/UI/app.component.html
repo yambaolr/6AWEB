@@ -1,0 +1,48 @@
+<h1>Books Application</h1>
+<hr/>
+
+
+<div>
+  <h2>Add Book</h2>
+  <input id="newBook" placeholder="title">
+  <input id="newAuthor" placeholder="author">
+  <input id="newDesc" placeholder="description">
+  <input id="newGenre" placeholder="genre">
+  <input id="newPrice" placeholder="book price">
+
+  <button (click)="addBook()">Add book</button>
+</div>
+
+<div>
+  <h2>Books Available</h2>
+  @for (book of books; track book.id) {
+      <ul>
+        <li> <b class="title">{{ book.title }}</b>
+          <ul>
+            <li>{{ book.author }}</li>
+            <li>{{ book.desc }}</li>
+            <li>{{ book.genre }}</li>
+            <li>{{ book.price }}</li>
+            <li>
+              <button (click)="deleteBook(book.id)">Delete book</button><button (click)="updateForm(book.id)">Update book</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+        
+
+
+      @if (selectedBookId === book.id) {
+        <input id ="updatedBook" value="{{book.title}}"/>
+        <input id ="updatedAuthor" value="{{book.author}}"/>
+        <input id ="updatedDesc" value="{{book.desc}}"/>
+        <input id ="updatedGenre" value="{{book.genre}}"/>
+        <input id ="updatedPrice" value="{{book.price}}"/>
+
+        <button (click)="updateBook(book.id)" class="update">Update book</button>
+      }
+  } @empty {
+    <p>No books available</p>
+  }
+</div>
+<router-outlet />
